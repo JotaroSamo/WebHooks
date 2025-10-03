@@ -668,3 +668,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+!/WebHooks.sln
+!/WebHooks.sln
