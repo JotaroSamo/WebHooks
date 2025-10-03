@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XfY6VwEDD9U=",
+  "dgSpecHash": "Am9t8YopRfg=",
   "success": true,
   "projectFilePath": "C:\\Users\\a.samoshuk\\RiderProjects\\WebHools\\WebHooks.DataAccess\\WebHooks.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,8 @@
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\npgsql.opentelemetry\\9.0.3\\npgsql.opentelemetry.9.0.3.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\opentelemetry.api\\1.7.0\\opentelemetry.api.1.7.0.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",
@@ -46,6 +48,7 @@
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.composition.hosting\\7.0.0\\system.composition.hosting.7.0.0.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.composition.runtime\\7.0.0\\system.composition.runtime.7.0.0.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.composition.typedparts\\7.0.0\\system.composition.typedparts.7.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.reflection.metadata\\7.0.0\\system.reflection.metadata.7.0.0.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

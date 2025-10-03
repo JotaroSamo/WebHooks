@@ -1,64 +1,22 @@
-﻿using System.Net.Http.Json;
+﻿using System.Diagnostics;
+using System.Net.Http.Json;
 using System.Text.Json;
+using System.Threading.Channels;
+using MassTransit;
 using WebHook.Domain.IService.WeebHooks;
 using WebHook.Domain.Models.WebHooks;
+using WebHook.Domain.OpenTelemetry;
 
 namespace WebHooks.BusinessLogic.Service.WebHooks;
 
-public sealed class WebHookDispatcher(IHttpClientFactory httpClientFactory,
-    IWebHookRepository repository,
-    IWebHookDeliveryAttemptRepository repositoryDeliveryAttempt)
+public sealed class WebHookDispatcher(
+    IPublishEndpoint publishEndpoint) : IWebHookDispatcher
 {
-    public async Task DispatchAsync<T>(string eventType, T data)
+    public async Task DispatchAsync<T>(string eventType, T data) where T : notnull
     {
-        var webHookSubs = await repository.GetByEventTypeWebhookSubsAsync(eventType);
-
-        foreach (var webHookSub in webHookSubs)
-        {
-            using var httpClient = httpClientFactory.CreateClient();
-
-            var payload = new WebhookPayload<T>(Guid.NewGuid(),
-                webHookSub.EventType,
-                webHookSub.Id,
-                DateTime.UtcNow,
-                data);
-            
-            var jsonPayload = JsonSerializer.Serialize(payload);
-
-            try
-            {
-                var response = await httpClient.PostAsJsonAsync(webHookSub.WebhookUrl, payload);
-
-                var attempt = new WebHookDeliveryAttempt()
-                {
-                    Id = Guid.NewGuid(),
-                    SubscriptionId = webHookSub.Id,
-                    Payload = jsonPayload,
-                    ResponseStatusCode = (int)response.StatusCode,
-                    IsSuccess = response.IsSuccessStatusCode,
-                    Timestamp = DateTime.UtcNow
-                };
-
-                await repositoryDeliveryAttempt.Create(attempt);
-
-            }
-            catch (Exception e)
-            {
-                var attempt = new WebHookDeliveryAttempt()
-                {
-                    Id = Guid.NewGuid(),
-                    SubscriptionId = webHookSub.Id,
-                    Payload = jsonPayload,
-                    ResponseStatusCode = 0,
-                    IsSuccess = false,
-                    Timestamp = DateTime.UtcNow
-                };
-
-                await repositoryDeliveryAttempt.Create(attempt);
-            }
-            
-        }
-        
-        
+        using Activity? activity = DiagnosticConfig.Source.StartActivity($"{eventType} dispatch webhook");
+        activity?.AddTag("event.type", eventType);
+        await publishEndpoint.Publish(new WebHookDispatched(eventType, data));
     }
+    
 }

@@ -18,8 +18,4 @@
       <ProjectReference Include="..\WebHooks.DataAccess\WebHooks.DataAccess.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Infrastructure\" />
-    </ItemGroup>
-
 </Project>

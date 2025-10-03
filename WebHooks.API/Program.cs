@@ -1,6 +1,8 @@
+using System.Threading.Channels;
 using AspireWebHook;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 using Scalar.AspNetCore;
 using WebHook.DataAccess;
 using WebHook.Domain.IService.Ordes;
@@ -8,8 +10,12 @@ using WebHook.Domain.IService.WeebHooks;
 using WebHook.Domain.Models.Orders;
 using WebHook.Domain.Models.Users;
 using WebHook.Domain.Models.WebHooks;
+using WebHook.Domain.OpenTelemetry;
 using WebHooks.BusinessLogic.Service.Orders;
 using WebHooks.BusinessLogic.Service.WebHooks;
+using WebHools.Endpoints.Orders;
+using WebHools.Endpoints.WebHooks;
+using WebHools.Infrastructure.Configuration;
 using WebHools.Infrastructure.Extensions;
 
 
@@ -21,23 +27,22 @@ builder.Services.AddOpenApi();
 
 builder.AddServiceDefaults();
 
-builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddDataBase(builder.Configuration);
 
-builder.Services.AddScoped<IWebHookRepository, WebHookRepository>();
+builder.Services.AddIdentityConfiguration();
 
-builder.Services.AddScoped<IWebHookDeliveryAttemptRepository, WebHookDeliveryAttemptRepository>();
+builder.Services.AddServices();
 
-builder.Services.AddScoped<WebHookDispatcher>();
+builder.Services.AddMassTransitConfig(builder.Configuration);
 
-builder.Services.AddDbContext<WebHookDbContext>(opt =>
-{
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("webhooks"));
-});
 
-builder.Services.AddIdentity<AppUser, IdentityRole>()
-    .AddEntityFrameworkStores<WebHookDbContext>()
-    .AddDefaultTokenProviders();
-
+builder.Services.AddOpenTelemetry()
+    .WithTracing(tracing =>
+    {
+        tracing.AddSource(DiagnosticConfig.Source.Name)
+            .AddSource(MassTransit.Logging.DiagnosticHeaders.DefaultListenerName)
+            .AddNpgsql();
+    });
 
 var app = builder.Build();
 
@@ -50,34 +55,13 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
-app.MapPost("/webhooks/sub", async (CreateWebhookRequest request, IWebHookRepository repository) =>
-{
-    var webhook = new WebhookSub(Guid.NewGuid(), request.EventType, request.WebhookUrl, DateTime.UtcNow);
-    
-    await repository.CreateWebhookSubAsync(webhook);
-    
-    return Results.Ok(webhook);
-});
+app.MapOrderEndpoints();
 
-app.MapPost("/orders", async (CreateOrderRequest request, IOrderRepository orderRepository
-    , WebHookDispatcher dispatcher) =>
-{
-    var order = new Order(Guid.NewGuid(), request.Name, DateTime.UtcNow);
-    
-    await orderRepository.CreateOrderAsync(order);
-    
-    await dispatcher.DispatchAsync("order.create", order);
-    
-    return Results.Ok(order);
-    
-})
-.WithTags("Orders");
+app.MapWebHookEndpoints();
 
-app.MapGet("/orders", async (IOrderRepository orderRepository) =>
-{
-    return Results.Ok(await orderRepository.GetAllOrdersAsync());
-    
-}).WithTags("Orders");
+// app.UseAuthentication();
+//
+// app.UseAuthorization();
 
 app.UseHttpsRedirection();
 

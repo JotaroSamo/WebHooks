@@ -7,8 +7,14 @@ var database = builder.AddPostgres("postgres")
     .WithPgAdmin()
     .AddDatabase("webhooks");
 
-builder.AddProject<Projects.WebHooks_API>("WebHooks-API")
+var queue = builder.AddRabbitMQ("rabbitmq")
+    .WithDataVolume()
+    .WithManagementPlugin();
+
+builder.AddProject<WebHooks_API>("WebHooks-API")
     .WithReference(database)
-    .WaitFor(database);
+    .WithReference(queue)
+    .WaitFor(database)
+    .WaitFor(queue);
 
 builder.Build().Run();

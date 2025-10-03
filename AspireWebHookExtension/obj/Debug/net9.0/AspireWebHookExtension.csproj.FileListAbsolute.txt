@@ -10,3 +10,4 @@ C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9
 C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\refint\AspireWebHookExtension.dll
 C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\AspireWebHookExtension.pdb
 C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\ref\AspireWebHookExtension.dll
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\AspireWebHookExtension.sourcelink.json

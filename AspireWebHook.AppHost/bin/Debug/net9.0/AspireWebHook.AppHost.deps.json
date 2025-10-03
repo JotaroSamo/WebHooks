@@ -11,7 +11,8 @@
           "Aspire.Dashboard.Sdk.win-x64": "9.5.0",
           "Aspire.Hosting.AppHost": "9.5.0",
           "Aspire.Hosting.Orchestration.win-x64": "9.5.0",
-          "Aspire.Hosting.PostgreSQL": "9.5.0"
+          "Aspire.Hosting.PostgreSQL": "9.5.0",
+          "Aspire.Hosting.RabbitMQ": "9.5.0"
         },
         "runtime": {
           "AspireWebHook.AppHost.dll": {}
@@ -162,6 +163,42 @@
           }
         }
       },
+      "Aspire.Hosting.RabbitMQ/9.5.0": {
+        "dependencies": {
+          "AspNetCore.HealthChecks.Rabbitmq": "9.0.0",
+          "AspNetCore.HealthChecks.Uris": "9.0.0",
+          "Aspire.Hosting": "9.5.0",
+          "Google.Protobuf": "3.32.0",
+          "Grpc.AspNetCore": "2.71.0",
+          "Grpc.Net.ClientFactory": "2.71.0",
+          "Grpc.Tools": "2.72.0",
+          "Humanizer.Core": "2.14.1",
+          "JsonPatch.Net": "3.3.0",
+          "KubernetesClient": "17.0.14",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.9",
+          "Microsoft.Extensions.Configuration.Binder": "9.0.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "9.0.9",
+          "Microsoft.Extensions.Hosting": "9.0.9",
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.9",
+          "Microsoft.Extensions.Http": "9.0.9",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.9",
+          "Microsoft.Extensions.Options": "9.0.9",
+          "Microsoft.Extensions.Primitives": "9.0.9",
+          "Newtonsoft.Json": "13.0.3",
+          "Polly.Core": "8.6.3",
+          "RabbitMQ.Client": "7.1.2",
+          "Semver": "3.0.0",
+          "StreamJsonRpc": "2.22.11",
+          "System.IO.Hashing": "9.0.8"
+        },
+        "runtime": {
+          "lib/net8.0/Aspire.Hosting.RabbitMQ.dll": {
+            "assemblyVersion": "9.5.0.0",
+            "fileVersion": "9.500.25.47407"
+          }
+        }
+      },
       "AspNetCore.HealthChecks.NpgSql/9.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Diagnostics.HealthChecks": "9.0.9",
@@ -169,6 +206,18 @@
         },
         "runtime": {
           "lib/net8.0/HealthChecks.NpgSql.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
+        }
+      },
+      "AspNetCore.HealthChecks.Rabbitmq/9.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "9.0.9",
+          "RabbitMQ.Client": "7.1.2"
+        },
+        "runtime": {
+          "lib/net8.0/HealthChecks.Rabbitmq.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.0.0"
           }
@@ -893,6 +942,18 @@
           }
         }
       },
+      "RabbitMQ.Client/7.1.2": {
+        "dependencies": {
+          "System.IO.Pipelines": "8.0.0",
+          "System.Threading.RateLimiting": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.1.2.0"
+          }
+        }
+      },
       "Semver/3.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "9.0.9"
@@ -986,6 +1047,7 @@
         }
       },
       "System.IO.Pipelines/8.0.0": {},
+      "System.Threading.RateLimiting/8.0.0": {},
       "YamlDotNet/16.3.0": {
         "runtime": {
           "lib/net8.0/YamlDotNet.dll": {
@@ -1037,12 +1099,26 @@
       "path": "aspire.hosting.postgresql/9.5.0",
       "hashPath": "aspire.hosting.postgresql.9.5.0.nupkg.sha512"
     },
+    "Aspire.Hosting.RabbitMQ/9.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hjsdrmK7T78KGzAYpTF/E/JM2ITnId8DhxjD+uNe3g63wPznPDOT9Y2SoGK6FyHjAB88yes0oqF8yclFQa4fJw==",
+      "path": "aspire.hosting.rabbitmq/9.5.0",
+      "hashPath": "aspire.hosting.rabbitmq.9.5.0.nupkg.sha512"
+    },
     "AspNetCore.HealthChecks.NpgSql/9.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-npc58/AD5zuVxERdhCl2Kb7WnL37mwX42SJcXIwvmEig0/dugOLg3SIwtfvvh3TnvTwR/sk5LYNkkPaBdks61A==",
       "path": "aspnetcore.healthchecks.npgsql/9.0.0",
       "hashPath": "aspnetcore.healthchecks.npgsql.9.0.0.nupkg.sha512"
+    },
+    "AspNetCore.HealthChecks.Rabbitmq/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7WSQ7EwioA5niakzzLtGVcZMEOh+42fSwrI24vnNsT7gZuVGOViNekyz38G6wBPYKcpL/lUkMdg3ZaCiZTi/Dw==",
+      "path": "aspnetcore.healthchecks.rabbitmq/9.0.0",
+      "hashPath": "aspnetcore.healthchecks.rabbitmq.9.0.0.nupkg.sha512"
     },
     "AspNetCore.HealthChecks.Uris/9.0.0": {
       "type": "package",
@@ -1429,6 +1505,13 @@
       "path": "polly.core/8.6.3",
       "hashPath": "polly.core.8.6.3.nupkg.sha512"
     },
+    "RabbitMQ.Client/7.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y3c6ulgULScWthHw5PLM1ShHRLhxg0vCtzX/hh61gRgNecL3ZC3WoBW2HYHoXOVRqTl99Br9E7CZEytGZEsCyQ==",
+      "path": "rabbitmq.client/7.1.2",
+      "hashPath": "rabbitmq.client.7.1.2.nupkg.sha512"
+    },
     "Semver/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1463,6 +1546,13 @@
       "sha512": "sha512-FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
       "path": "system.io.pipelines/8.0.0",
       "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
+    },
+    "System.Threading.RateLimiting/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7mu9v0QDv66ar3DpGSZHg9NuNcxDaaAcnMULuZlaTpP9+hwXhrxNGsF5GmLkSHxFdb5bBc1TzeujsRgTrPWi+Q==",
+      "path": "system.threading.ratelimiting/8.0.0",
+      "hashPath": "system.threading.ratelimiting.8.0.0.nupkg.sha512"
     },
     "YamlDotNet/16.3.0": {
       "type": "package",
