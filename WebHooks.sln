@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHooks.API", "WebHooks.API\WebHooks.API.csproj", "{69D54D79-8BCD-48F3-8F79-B6B04C456E0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspire", "aspire", "{C11AF541-5987-484F-9E67-E289A071590C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireWebHookExtension", "AspireWebHookExtension\AspireWebHookExtension.csproj", "{7D19A8B2-2D31-47FC-AAB0-BD828DD298D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireWebHook.AppHost", "AspireWebHook.AppHost\AspireWebHook.AppHost.csproj", "{30888A9D-7E17-4ED7-8A03-E700E4F9A90F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHooks.Domain", "WebHooks.Domain\WebHooks.Domain.csproj", "{628B8A2A-14C7-4D25-B753-3C008879DD02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHooks.DataAccess", "WebHooks.DataAccess\WebHooks.DataAccess.csproj", "{B7B229DA-FFFC-4906-8679-5F73AEFA3CCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHooks.BusinessLogicc", "WebHooks.BusinessLogicc\WebHooks.BusinessLogicc.csproj", "{625A32C6-0A63-4457-92B8-818A774ED3ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webhook", "webhook", "{9E54C8DB-487C-4C30-9A7C-A2502E479201}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69D54D79-8BCD-48F3-8F79-B6B04C456E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D54D79-8BCD-48F3-8F79-B6B04C456E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D54D79-8BCD-48F3-8F79-B6B04C456E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D54D79-8BCD-48F3-8F79-B6B04C456E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D19A8B2-2D31-47FC-AAB0-BD828DD298D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D19A8B2-2D31-47FC-AAB0-BD828DD298D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D19A8B2-2D31-47FC-AAB0-BD828DD298D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D19A8B2-2D31-47FC-AAB0-BD828DD298D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30888A9D-7E17-4ED7-8A03-E700E4F9A90F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30888A9D-7E17-4ED7-8A03-E700E4F9A90F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30888A9D-7E17-4ED7-8A03-E700E4F9A90F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30888A9D-7E17-4ED7-8A03-E700E4F9A90F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{628B8A2A-14C7-4D25-B753-3C008879DD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628B8A2A-14C7-4D25-B753-3C008879DD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628B8A2A-14C7-4D25-B753-3C008879DD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628B8A2A-14C7-4D25-B753-3C008879DD02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7B229DA-FFFC-4906-8679-5F73AEFA3CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7B229DA-FFFC-4906-8679-5F73AEFA3CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7B229DA-FFFC-4906-8679-5F73AEFA3CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7B229DA-FFFC-4906-8679-5F73AEFA3CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625A32C6-0A63-4457-92B8-818A774ED3ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625A32C6-0A63-4457-92B8-818A774ED3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625A32C6-0A63-4457-92B8-818A774ED3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625A32C6-0A63-4457-92B8-818A774ED3ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30888A9D-7E17-4ED7-8A03-E700E4F9A90F} = {C11AF541-5987-484F-9E67-E289A071590C}
+		{7D19A8B2-2D31-47FC-AAB0-BD828DD298D3} = {C11AF541-5987-484F-9E67-E289A071590C}
+		{69D54D79-8BCD-48F3-8F79-B6B04C456E0B} = {9E54C8DB-487C-4C30-9A7C-A2502E479201}
+		{625A32C6-0A63-4457-92B8-818A774ED3ED} = {9E54C8DB-487C-4C30-9A7C-A2502E479201}
+		{B7B229DA-FFFC-4906-8679-5F73AEFA3CCC} = {9E54C8DB-487C-4C30-9A7C-A2502E479201}
+		{628B8A2A-14C7-4D25-B753-3C008879DD02} = {9E54C8DB-487C-4C30-9A7C-A2502E479201}
+	EndGlobalSection
+	GlobalSection(RiderSharedRunConfigurations) = postSolution
+		File = AspireWebHook\.run\WebHools_ http.run.xml
+	EndGlobalSection
+EndGlobal
