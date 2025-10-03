@@ -1,0 +1,12 @@
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\bin\Debug\net9.0\AspireWebHookExtension.deps.json
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\bin\Debug\net9.0\AspireWebHookExtension.dll
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\bin\Debug\net9.0\AspireWebHookExtension.pdb
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\AspireWebHookExtension.csproj.AssemblyReference.cache
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\AspireWebHookExtension.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\AspireWebHookExtension.AssemblyInfoInputs.cache
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\AspireWebHookExtension.AssemblyInfo.cs
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\AspireWebHookExtension.csproj.CoreCompileInputs.cache
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\AspireWebHookExtension.dll
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\refint\AspireWebHookExtension.dll
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\AspireWebHookExtension.pdb
+C:\Users\a.samoshuk\RiderProjects\WebHools\AspireWebHookExtension\obj\Debug\net9.0\ref\AspireWebHookExtension.dll
