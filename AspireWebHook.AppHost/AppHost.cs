@@ -17,4 +17,11 @@ builder.AddProject<WebHooks_API>("WebHooks-API")
     .WaitFor(database)
     .WaitFor(queue);
 
+builder.AddProject<WebHookProcessing_Api>("WebHookPrcessing-Api")
+    .WithReplicas(3)
+    .WithReference(database)
+    .WithReference(queue)
+    .WaitFor(database)
+    .WaitFor(queue); 
+
 builder.Build().Run();

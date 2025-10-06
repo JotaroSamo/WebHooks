@@ -3,7 +3,7 @@ using MassTransit;
 using WebHook.Domain.IService.WeebHooks;
 using WebHook.Domain.Models.WebHooks;
 
-namespace WebHools.Infrastructure.Consumers;
+namespace WebHookPrcessing.Api.Infrastructure.Consumers;
 
 internal sealed class WebHookTriggeredConsumer(IHttpClientFactory httpClientFactory,
     IWebHookDeliveryAttemptRepository repository) : IConsumer<WebHookTriggered>

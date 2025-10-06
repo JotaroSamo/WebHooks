@@ -1,9 +1,8 @@
 ﻿using MassTransit;
-using WebHook.DataAccess;
 using WebHook.Domain.IService.WeebHooks;
 using WebHook.Domain.Models.WebHooks;
 
-namespace WebHools.Infrastructure.Consumers;
+namespace WebHookPrcessing.Api.Infrastructure.Consumers;
 
 internal sealed class WebHookConsumer(IWebHookRepository repository) : IConsumer<WebHookDispatched>
 {

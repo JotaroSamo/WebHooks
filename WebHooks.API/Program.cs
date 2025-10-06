@@ -36,7 +36,7 @@ builder.Services.AddServices();
 builder.Services.AddMassTransitConfig(builder.Configuration);
 
 
-builder.Services.AddOpenTelemetry()
+ builder.Services.AddOpenTelemetry()
     .WithTracing(tracing =>
     {
         tracing.AddSource(DiagnosticConfig.Source.Name)

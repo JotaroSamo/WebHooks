@@ -1,6 +1,7 @@
 ﻿using MassTransit;
+using WebHookPrcessing.Api.Infrastructure.Consumers;
 
-namespace WebHools.Infrastructure.Configuration;
+namespace WebHookPrcessing.Api.Infrastructure.Configuration;
 
 public static class MassTransitConfig
 {
@@ -9,6 +10,9 @@ public static class MassTransitConfig
         services.AddMassTransit(builder =>
         {
             builder.SetKebabCaseEndpointNameFormatter();
+
+            builder.AddConsumer<WebHookConsumer>();
+            builder.AddConsumer<WebHookTriggeredConsumer>();
             
             builder.UsingRabbitMq((context, config)
                 =>
